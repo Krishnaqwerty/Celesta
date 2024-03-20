@@ -1,1 +1,109 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #85D8CE 0%, #A7E2D8 100%);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #5AB7AF 0%, #86C5C3 100%);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+form {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #0077cc;
+}
+
+button {
+    background: linear-gradient(90deg, #4EA5A1 0%, #0077cc 100%);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #005ea6 0%, #2a93c7 100%);
+}
+
+footer {
+    background: linear-gradient(90deg, #5AB7AF 0%, #86C5C3 100%);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* add attractive style and color to select and option tags */
+/* select {
+    width: calc(100% - 22px) ;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+} */
+
+
+
+select {
+    width: calc(100% - 0px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #0077cc;
+}
 
