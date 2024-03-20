@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSage</title>
+    <link rel="icon" href="{{ url_for('static', filename='css/drop.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style5.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AquaSage</h1>
+    </header>
+    <main>
+        <form id="input-form" action="{{ url_for('predict')}}"method="post">
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required>
 
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required>
+
+            <!-- <select id="data-type" name="data-type">
+                <option value="all">All</option>
+                <option value="water-quality">Water Quality</option>
+                <option value="water-level">Water Level</option>
+                <option value="soil-drilling">Soil Drilling</option>
+            </select> -->
+
+            <label for="Depth">Depth:</label>
+            <input type="text" id="depth" name="depth" required>
+
+
+            <button type="submit" onclick="predict()">Get Results</button>
+
+            
+            
+
+
+        </form>
+
+        <div id="results">
+            <!-- Results will be displayed here -->
+            <!-- {% if prediction_text %} -->
+            <h2>Results</h2>
+            <!-- <p> -->
+                {{ prediction_text }}
+
+            <!-- </p> -->
+            <!-- {% endif %} -->
+
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 AquaSage. All rights reserved.</p>
+    </footer>
+
+
+    <!-- <script>
+        function predict() {
+            const latitude = document.getElementById('latitude').value;
+            const longitude = document.getElementById('longitude').value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude, longitude })
+            })
+            .then(response => response.text())
+            .then(prediction => {
+                // Display the prediction result
+                document.getElementById('results').innerHTML = `
+                    <h2>Results</h2>
+                    <p>Status: ${prediction}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script> -->
+
+
+
+
+
+
+
+
+    <!-- <script>
+        document.getElementById('input-form').addEventListener('submit', function(event) {
+            // event.preventDefault(); // Prevent form submission
+            
+            // Get latitude and longitude values from the form
+            const latitude = document.getElementById('latitude').value;
+            const longitude = document.getElementById('longitude').value;
+
+            // Send latitude and longitude data to the ML model endpoint
+            fetch('model.pkl', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude, longitude })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the result in the results div
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = `
+                    <h2>Results</h2>
+                    // <p>Status: ${data.status}</p>
+                    // <p>Hydrogeographical Formation Type: ${data.formationType}</p>
+                    // <p>Drilling Methods: ${data.drillingMethods}</p>
+                    <p>Ground Water Level: ${data.groundWaterLevel}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script> -->
+
+
+
+</body>
+</html>
